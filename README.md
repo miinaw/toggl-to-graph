@@ -1,2 +1,2 @@
 # toggl-to-graph
-togglから取得したデータをグラフ化する
+[toggl](https://toggl.com/)から取得したデータをグラフ化する
