@@ -1,9 +1,8 @@
 # coding: UTF-8
-
 import requests
 import pprint
 import sys
-import settings.py
+import settings
 from datetime import date
 
 
