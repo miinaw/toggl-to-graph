@@ -1,8 +1,10 @@
 # coding: UTF-8
+
 import requests
 import pprint
 import sys
 import settings
+import pickle
 from datetime import date
 
 
@@ -12,6 +14,7 @@ W_ID = '3065983'       # 確認したworkspace_idを設定
 MAIL = settings.MAIL       # 登録したメールを設定
 since = sys.argv[2]  # from date
 until = sys.argv[3]
+data_list = []
 
 def get_toggl():
     headers = {'content-type': 'application/json'}
@@ -32,7 +35,12 @@ if __name__ == '__main__':
     for data in details:
         project = data['project']
         if project == proj:
-            description = data['description']
+            description = str(data['description'])
             print(description)
             time = float(data['dur']) / 3600000
             print(time)
+            data_list = [description, time]
+            
+            f = open('toggl-data.textfile','wb')
+            pickle.dump(description.encode('utf-8'),f)
+            f.close
