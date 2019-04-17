@@ -1,5 +1,5 @@
 # coding: UTF-8
-
+import pandas as pd
 import requests
 import pprint
 import sys
@@ -14,7 +14,8 @@ W_ID = '3065983'       # 確認したworkspace_idを設定
 MAIL = settings.MAIL       # 登録したメールを設定
 since = sys.argv[2]  # from date
 until = sys.argv[3]
-data_list = []
+time_list = []
+date_list = []
 
 def get_toggl():
     headers = {'content-type': 'application/json'}
@@ -39,8 +40,18 @@ if __name__ == '__main__':
             print(description)
             time = float(data['dur']) / 3600000
             print(time)
-            data_list = [description, time]
+            date = data['start'].split('T')[0]
+            print(date)
+            time_list.append(time)
+            print(time_list)
+            date_list.append(date)
+            print(date_list)
             
-            f = open('toggl-data.textfile','wb')
-            pickle.dump(description.encode('utf-8'),f)
-            f.close
+
+# df = pd.DataFrame({'list':[time_list]},index=pd.date_range(since, until, freq='D'))
+# print(df)
+# df.to_csv('pandas_obj.csv')
+# f = open('toggl-data.textfile','wb')
+# pickle.dump(time_list,f)
+# f.close
+ 
