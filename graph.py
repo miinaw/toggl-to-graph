@@ -8,5 +8,7 @@ y = df['time']
 print(x)
 print(y)
 
+plt.xlabel('date')
+plt.ylabel('time(m)')
 plt.plot(x, y, marker="o", color = "red", linestyle = "--")
 plt.show()
