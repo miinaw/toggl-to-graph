@@ -6,6 +6,7 @@ import sys
 import settings
 import pickle
 from datetime import date
+import graph
 
 
 proj = sys.argv[1]  # 集計したいプロジェクト名 
@@ -47,3 +48,4 @@ if __name__ == '__main__':
 df = pd.DataFrame({'date': date_list, 'time': time_list})
 df.to_csv('toggl_data.csv', index=False)
 
+graph.create_graph() # グラフ作成
