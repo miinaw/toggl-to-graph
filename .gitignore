@@ -2,6 +2,7 @@
 .idea/
 .vscode/
 .vs/
+toggl_data.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
