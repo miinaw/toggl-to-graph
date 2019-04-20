@@ -1,7 +1,7 @@
 # toggl-to-graph
 [toggl](https://toggl.com/)から取得したデータをグラフ化する
 グラフ化したいプロジェクトと期間を指定できる
-※togglAPIの使用上、年をまたいだデータの取得が不可能
+※[togglAPI](https://github.com/toggl/toggl_api_docs/blob/master/reports/detailed.md)の使用上、年をまたいだデータの取得が不可能
 
 ## 手順
 1. `pip install python-dotenv　pandas matplotlib`
