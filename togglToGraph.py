@@ -4,7 +4,6 @@ import requests
 import pprint
 import sys
 import settings
-import pickle
 from datetime import date
 import graph
 
