@@ -38,13 +38,12 @@ if __name__ == '__main__':
     for data in details:
         project = data['project']
         if project == proj:
-            # description = str(data['description'])
-            time = round(float(data['dur']) / 3600000, 2)
+            time = (round(float(data['dur']) / 3600000, 2) * 60)
             date = data['start'].split('T')[0]
             time_list.append(time)
             date_list.append(date)
             # toggl_data.update(zip(date_list, time_list))
 
 df = pd.DataFrame({'date': date_list, 'time': time_list})
-print(df)
 df.to_csv('toggl_data.csv', index=False)
+
