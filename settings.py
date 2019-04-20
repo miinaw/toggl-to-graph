@@ -8,3 +8,4 @@ load_dotenv(dotenv_path)
 
 API_TOKEN= os.environ.get("API_TOKEN")
 MAIL= os.environ.get("MAIL")
+W_ID= os.environ.get("W_ID")
